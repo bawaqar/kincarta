@@ -11,12 +11,12 @@ Dotnercore is free cross-platform for window/mac/linux/docker
 - [How to download on local via CLI](https://docs.microsoft.com/en-us/dotnet/core/install/macos)
 #### Add a few nuget(Package manager) sources - Run following commands
 
-3.`dotnet nuget add source https://api.nuget.org/v3/index.json`
+ -`dotnet nuget add source https://api.nuget.org/v3/index.json`
 ## Build Projects(Solution)
 Go to the directory where the code is cloned run following command
-####`dotnet restore`
+-`dotnet restore`
 &
-####`dotnet build`
+-`dotnet build`
 
 ### Running Tests
 - [Examples how to run test from command line ](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) 
