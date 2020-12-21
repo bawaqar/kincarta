@@ -31,15 +31,18 @@ namespace ParkDistrict.Tests
         [TestCase("63rd Street Weather Station", Description = "API lists all the measurements", TestName = "Pagination Test", Category = "Positive")]
         public async Task TestPagination(string stationName)
         {
-            var temp = $"?$limit=10&$offset=0&$where=station_name=\"{stationName}\"";
+           
             var firstPageResults = await DataSensor_API.GetSensorData($"?$limit=10&$offset=0&$where=station_name=\"{stationName}\"");
             var SecondPageResults = await DataSensor_API.GetSensorData($"?$limit=10&$offset=10&$where=station_name=\"{stationName}\"");
+           
             //Verify Only 10 records are retrieved 
             Assert.AreEqual(10, firstPageResults.Count);
             Assert.AreEqual(10, SecondPageResults.Count);
-            //Make sure recors are not repeated from Page one to Page to
+            
+            //Make sure recors are not repeated from Page one to Page two
             var p1_measure_ts = firstPageResults.Select(a => a.MeasurementTimestamp).ToList();
             var p2_measure_ts = SecondPageResults.Select(a => a.MeasurementTimestamp).ToList();
+            
             // as long as the field measurement_timestamp from one page do not another page do not intersect. we got the right data
             Assert.IsFalse(p1_measure_ts.Intersect(p2_measure_ts).Count() == p2_measure_ts.Count);
 

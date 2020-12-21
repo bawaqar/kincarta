@@ -22,3 +22,4 @@ Go to the directory where the code is cloned run following command
 - [Examples how to run test from command line ](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) 
 #### To run all the tests from all the projects in solution
 `dotnet test`
+

@@ -9,7 +9,7 @@ namespace ParkDistrict.Fixture
     [TestFixture]
     public class BaseFixture
     {
-        //In real project, i would keep that into config file
+        //In real project, I would keep that into config file
         private static readonly string _baseUrl = "https://data.cityofchicago.org/";
         private static readonly string _resource = "resource/k7hf-8y75.json";
 
